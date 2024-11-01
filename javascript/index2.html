@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;        
+        }
+        #clock {
+            color: #13df3bd7;    
+            text-align: center;    
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        function Clock() {
+            const date = new Date();
+            const hours = date.getHours().toString();
+            const minutes = date.getMinutes().toString();
+            const seconds = date.getSeconds().toString();
+            const clock = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').innerText = clock;
+        }
+
+        setInterval(Clock, 1000); // استدعاء الدالة كل ثانية 
+        Clock(); 
+    </script>
+</body>
+</html>
